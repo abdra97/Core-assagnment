@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Small Project</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="inner-container">
+        <div class="container bg-light">
+          <!-- the row of the title -->
+          <div class="row bg-dark" style="height: 50px">
+            <div class="col-2 title-col bg-info">Fresh Food</div>
+            <div class="col-8 bg-light"></div>
+            <div class="col-2 title-col bg-primary">Help</div>
+          </div>
+        </div>
+
+        <!-- row of the body -->
+        <div class="row h-100 m-2">
+          <!-- left side-->
+          <div class="col-9 pt-2">
+            <!-- item details part-->
+            <div class="row h-25">
+              <div class="col-3 image-container">
+                <img id="item-image" src="" alt="a picture of item">
+
+              </div>
+              <div class="col-9">
+                <div class="row h-50 item-name align-items-center">
+                  <div id="item-name" class="col bold-text">item name
+                </div>
+                  <div class="col text-right">
+                    <button class="btn btn-danger">Delete Item</button>
+                </div>
+                </div>
+                <div class="row h-50 ">
+                  <div class="col ml-2">
+                    <div class="row align-items-center gray-text">Price USD</div>
+                    <div class="row pt-3 bold-text" id="item-price"> </div>
+                    
+                  </div>
+                  <div class="col ">
+                    <div class="row w-100 justify-content-center gray-text ">Quantity, PC</div>
+                    <div class="row pt-3">
+                        <div class="input-group">
+                            <button onclick="dicreaseQuantity()" id="dicrease" class="btn btn-primary">-</button>
+                            <input  id="quantity" type="number" class="form-control" value="1">
+                            <button onclick="increaseQuantity()" id="increase" class="btn btn-primary">+</button>
+                        </div>
+                    </div>
+                   
+                  </div>
+                  <div class="col w-100 text-right">
+                    <div class="row w-100 justify-content-end gray-text">Total USD</div>
+                    <div class="row w-100 justify-content-end bold-text" id="total-item-price">0</div>
+                    <div class="row w-100 justify-content-end" id="discount">-4,14</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- item list part-->
+            <div class="container h-50 overflow-auto ">
+              <table>
+                <thead>
+                  <tr onclick="showItemDetails('item1')">
+                  <th>ID</th>
+                  <th>In Card</th>
+                  <th>Quantity</th>
+                  <th>Price,$</th>
+                  </tr>  
+                </thead>
+                <tbody>
+                  <!--table row will be generated here-->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- total part -->
+            <div class="row h-25 total-part">
+              <div class="col ml-4 pt-2">
+                <div class="row pt-1 text-white">Cost before discount</div>
+                <div class="row pt-1 " style="color: rgb(141, 213, 141);">Discount</div>
+                <div class="row pt-2 bold-text text-white">Total To Pay</div>
+              </div>
+
+              <div class="col ml-4 pt-2">
+                <div id="total-before-discount" class="row pt-1 w-100 justify-content-end text-white">0</div>
+              <div id="discount" class="row pt-1 w-100 justify-content-end "  style="color:  rgb(141, 213, 141);">-4.14</div>
+              <div id="total-after-discount" class="row pt-2 w-100 justify-content-end bold-text text-white">0</div>
+            </div>
+          </div>
+        </div>
+        <!-- right side -->
+        <div class="col-3 rightside-container overflow-auto h-100">
+            <img src="/images/rightside.png" alt="right side picture">
+          
+        
+          
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
