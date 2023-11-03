@@ -1,5 +1,5 @@
 import { itemDetails } from "./modules/itemDetails.js";
-import { OrderLineItem } from "./modules/orderLineItem.js";
+import createOrderLine from "./modules/orderLineItem.js";
 
 const increaseBtn = document.getElementById("increase");
 const quantityInput = document.getElementById("quantity");
@@ -11,7 +11,7 @@ const totalAfter = document.getElementById("total-after-discount");
 const discount = document.getElementById("discount");
 
 
-const orderLines = itemDetails.map((item) => new OrderLineItem(item));
+const orderLines = itemDetails.map((item) => createOrderLine(item));
 
 
 const generateItemTable = () => {
