@@ -1,18 +1,16 @@
 import { itemDetails } from "./modules/itemDetails.js";
-import createOrderLine from "./modules/orderLineItem.js";
+import createOrderLine from "./modules/createOrderLineItem.js";
+import createOrderLineItemEditor from "./modules/createOrderLineItemEditor.js";
 
-const increaseBtn = document.getElementById("increase");
-const quantityInput = document.getElementById("quantity");
-const dicreaseBtn = document.getElementById("dicrease");
 const totalItemPrice = document.getElementById("total-item-price");
-const itemPrice = document.getElementById("item-price");
 const totalBefore = document.getElementById("total-before-discount");
 const totalAfter = document.getElementById("total-after-discount");
 const discount = document.getElementById("discount");
 
+const orderLineEditor = createOrderLineItemEditor();
 
-const orderLines = itemDetails.map((item) => createOrderLine(item));
 
+const orderLines = itemDetails.map((item) => createOrderLine(item, orderLineEditor.showItemDetails));
 
 const generateItemTable = () => {
   const tableBody = document.querySelector("table tbody");
@@ -34,9 +32,7 @@ const updateFinalTotal = () => {
   totalBefore.textContent = newTotal.toFixed(2);
   totalAfter.textContent = finalTotal.toFixed(2);
 };
-
 generateItemTable();
 updateFinalTotal();
 
-orderLines[0].showItemDetails();
-//updateItemTotal(0);
+orderLineEditor.showItemDetails(orderLines[0]);
